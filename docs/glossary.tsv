@@ -1,0 +1,159 @@
+iri	english	chinese	kind	definition
+https://example.org/cabot-audit/ontology/Organization	Organization	组织	Class	An organization participating in a business or review process.
+https://example.org/cabot-audit/ontology/Supplier	Supplier	供应商	Class	An organization supplying goods or services in the reconciliation context.
+https://example.org/cabot-audit/ontology/BuyerLegalEntity	BuyerLegalEntity	采购法人	Class	A legal entity against whose payable account transactions are reconciled.
+https://example.org/cabot-audit/ontology/SupplierAccount	SupplierAccount	供应商往来账户	Class	The account relationship between one supplier and one buyer legal entity.
+https://example.org/cabot-audit/ontology/FinancialDocument	FinancialDocument	财务凭证	Class	A business document recording an invoice, adjustment or account statement.
+https://example.org/cabot-audit/ontology/Invoice	Invoice	发票	Class	A document requesting payment for supplied goods or services.
+https://example.org/cabot-audit/ontology/CreditMemo	CreditMemo	贷项凭证	Class	A document recording an adjustment that reduces an amount payable under the approved sign policy.
+https://example.org/cabot-audit/ontology/DebitNote	DebitNote	借项凭证	Class	A document recording an adjustment whose payable effect requires an explicit source sign policy.
+https://example.org/cabot-audit/ontology/SupplierStatement	SupplierStatement	供应商对账单	Class	A supplier-provided statement of account for an explicitly bounded reconciliation scope.
+https://example.org/cabot-audit/ontology/Payment	Payment	付款	Class	A transfer of funds whose allocation to invoices is recorded separately.
+https://example.org/cabot-audit/ontology/SourceSystem	SourceSystem	来源系统	Class	The system or submission channel that produced a source dataset.
+https://example.org/cabot-audit/ontology/SourceDataset	SourceDataset	来源数据快照	Class	An immutable identified snapshot used as reconciliation evidence.
+https://example.org/cabot-audit/ontology/RecordObservation	RecordObservation	来源记录观察	Class	A source-specific assertion about a document or account, preserving values that may disagree with another source.
+https://example.org/cabot-audit/ontology/SupplierStatementLine	SupplierStatementLine	供应商对账单记录	Class	An invoice-level observation appearing in a supplier statement.
+https://example.org/cabot-audit/ontology/InternalAPRecord	InternalAPRecord	企业应付记录	Class	An observation extracted from the buyer accounts-payable dataset.
+https://example.org/cabot-audit/ontology/Allocation	Allocation	分配记录	Class	A dated amount linking a payment or credit to an invoice.
+https://example.org/cabot-audit/ontology/PaymentAllocation	PaymentAllocation	付款分配	Class	An allocation of a payment amount to an invoice.
+https://example.org/cabot-audit/ontology/CreditAllocation	CreditAllocation	贷项抵扣分配	Class	An application of part or all of a credit memo to an invoice.
+https://example.org/cabot-audit/ontology/BalanceSnapshot	BalanceSnapshot	余额快照	Class	A source-derived net payable balance for an account, currency and cut-off scope.
+https://example.org/cabot-audit/ontology/ReconciliationScope	ReconciliationScope	对账范围	Class	The account, currency, cut-off and completeness conditions under which records are comparable.
+https://example.org/cabot-audit/ontology/ReconciliationRun	ReconciliationRun	对账运行批次	Class	An identified execution context binding input datasets, scope and rule versions.
+https://example.org/cabot-audit/ontology/AuditRule	AuditRule	审计规则	Class	A versioned semantic specification of a deterministic check, not an executable algorithm.
+https://example.org/cabot-audit/ontology/MatchDecision	MatchDecision	匹配决策	Class	An explicit decision linking or leaving unmatched source observations with its method and status.
+https://example.org/cabot-audit/ontology/RuleEvaluation	RuleEvaluation	规则评估结果	Class	The recorded outcome of applying a rule in a run, including not-evaluable outcomes.
+https://example.org/cabot-audit/ontology/AuditFinding	AuditFinding	审计异常	Class	An exception record derived from a failed deterministic rule evaluation; it does not establish recoverability.
+https://example.org/cabot-audit/ontology/FindingInterpretation	FindingInterpretation	异常原因建议	Class	An evidence-linked explanation proposed for a finding, distinct from a confirmed review decision.
+https://example.org/cabot-audit/ontology/ReviewDecision	ReviewDecision	人工审核决定	Class	An attributable human disposition of a finding or proposed interpretation.
+https://example.org/cabot-audit/ontology/ControlledConcept	ControlledConcept	受控词表概念	Class	A governed value used to classify a status, outcome or interpretation.
+https://example.org/cabot-audit/ontology/PaymentStatus	PaymentStatus	付款状态	Class	A normalized payment-state vocabulary value.
+https://example.org/cabot-audit/ontology/FindingType	FindingType	异常类型	Class	A classification of the discrepancy identified by a deterministic rule.
+https://example.org/cabot-audit/ontology/CheckOutcome	CheckOutcome	检查结果	Class	A vocabulary value distinguishing pass, fail, validation failure and not evaluable.
+https://example.org/cabot-audit/ontology/FindingStatus	FindingStatus	异常处理状态	Class	A workflow state of an audit finding.
+https://example.org/cabot-audit/ontology/IssueSeverity	IssueSeverity	影响性质	Class	A classification of financial or control impact; not an ordinal risk score.
+https://example.org/cabot-audit/ontology/RiskLevel	RiskLevel	风险等级	Class	A reviewed or proposed risk rating whose basis must be retained.
+https://example.org/cabot-audit/ontology/CauseCategory	CauseCategory	原因类别	Class	A candidate cause classification that does not by itself confirm a root cause.
+https://example.org/cabot-audit/ontology/ReviewDisposition	ReviewDisposition	审核结论	Class	A human disposition such as confirmed, rejected or needs evidence.
+https://example.org/cabot-audit/ontology/MatchMethod	MatchMethod	匹配方法	Class	The evidence method used to propose or confirm a source-record correspondence.
+https://example.org/cabot-audit/ontology/accountSupplier	accountSupplier	账户供应商	ObjectProperty	Identifies the supplier participating in the account.
+https://example.org/cabot-audit/ontology/accountBuyer	accountBuyer	账户采购法人	ObjectProperty	Identifies the buyer legal entity participating in the account.
+https://example.org/cabot-audit/ontology/issuedBy	issuedBy	发行方	ObjectProperty	Identifies the organization issuing the document.
+https://example.org/cabot-audit/ontology/billedTo	billedTo	被开票法人	ObjectProperty	Identifies the buyer legal entity billed by the invoice.
+https://example.org/cabot-audit/ontology/statementForAccount	statementForAccount	对账单账户	ObjectProperty	Identifies the account described by a supplier statement.
+https://example.org/cabot-audit/ontology/lineOfStatement	lineOfStatement	所属对账单	ObjectProperty	Links a supplier observation to its statement.
+https://example.org/cabot-audit/ontology/datasetFromSystem	datasetFromSystem	数据来源系统	ObjectProperty	Identifies the system or channel providing a snapshot.
+https://example.org/cabot-audit/ontology/recordInDataset	recordInDataset	记录所属快照	ObjectProperty	Links an observation to its immutable source snapshot.
+https://example.org/cabot-audit/ontology/observationForAccount	observationForAccount	记录所属账户	ObjectProperty	Identifies the account to which a source observation relates.
+https://example.org/cabot-audit/ontology/observationAboutDocument	observationAboutDocument	记录对应凭证	ObjectProperty	Links an observation to a document after identity is established.
+https://example.org/cabot-audit/ontology/scopeForAccount	scopeForAccount	范围对应账户	ObjectProperty	Binds a comparison scope to a supplier account.
+https://example.org/cabot-audit/ontology/runHasScope	runHasScope	批次对账范围	ObjectProperty	Binds a run to its comparability conditions.
+https://example.org/cabot-audit/ontology/runUsesDataset	runUsesDataset	批次使用快照	ObjectProperty	Identifies a source snapshot used by the run.
+https://example.org/cabot-audit/ontology/matchSupplierRecord	matchSupplierRecord	匹配供应商记录	ObjectProperty	Identifies the supplier-side observation, if present.
+https://example.org/cabot-audit/ontology/matchCabotRecord	matchCabotRecord	匹配企业记录	ObjectProperty	Identifies the enterprise-side observation, if present.
+https://example.org/cabot-audit/ontology/hasMatchMethod	hasMatchMethod	采用匹配方法	ObjectProperty	Records the matching method, without treating candidates as identity.
+https://example.org/cabot-audit/ontology/evaluationUsesRule	evaluationUsesRule	评估使用规则	ObjectProperty	Identifies the semantic rule specification for an evaluation.
+https://example.org/cabot-audit/ontology/evaluationInRun	evaluationInRun	评估所属批次	ObjectProperty	Identifies the evaluation run.
+https://example.org/cabot-audit/ontology/evaluationUsesObservation	evaluationUsesObservation	评估使用记录	ObjectProperty	Links all participating observations used as evidence.
+https://example.org/cabot-audit/ontology/evaluationUsesSnapshot	evaluationUsesSnapshot	评估使用余额	ObjectProperty	Links balances used in an aggregate comparison.
+https://example.org/cabot-audit/ontology/hasCheckOutcome	hasCheckOutcome	检查结果值	ObjectProperty	Records whether a check passed, failed or could not be evaluated.
+https://example.org/cabot-audit/ontology/findingFromEvaluation	findingFromEvaluation	异常来源评估	ObjectProperty	Links a finding to its deterministic evaluation.
+https://example.org/cabot-audit/ontology/findingAboutDocument	findingAboutDocument	异常相关凭证	ObjectProperty	Links the business documents associated with a finding.
+https://example.org/cabot-audit/ontology/hasFindingType	hasFindingType	异常类型值	ObjectProperty	Classifies a finding using the governed vocabulary.
+https://example.org/cabot-audit/ontology/hasFindingStatus	hasFindingStatus	异常处理状态值	ObjectProperty	Records the current workflow state of a finding.
+https://example.org/cabot-audit/ontology/hasIssueSeverity	hasIssueSeverity	异常影响性质	ObjectProperty	Records the type of impact rather than a risk ranking.
+https://example.org/cabot-audit/ontology/hasRiskLevel	hasRiskLevel	异常风险等级	ObjectProperty	Records an explicitly assigned risk level; absence means not rated.
+https://example.org/cabot-audit/ontology/interpretationOf	interpretationOf	解释对应异常	ObjectProperty	Links a proposed explanation to a finding.
+https://example.org/cabot-audit/ontology/interpretationEvidence	interpretationEvidence	解释使用证据	ObjectProperty	Links source observations supporting an interpretation.
+https://example.org/cabot-audit/ontology/hasCauseCategory	hasCauseCategory	建议原因类别	ObjectProperty	Classifies a proposed explanation without confirming it.
+https://example.org/cabot-audit/ontology/reviewedFinding	reviewedFinding	审核对应异常	ObjectProperty	Identifies the finding reviewed by a human.
+https://example.org/cabot-audit/ontology/reviewedInterpretation	reviewedInterpretation	审核对应解释	ObjectProperty	Identifies a proposed interpretation reviewed by a human.
+https://example.org/cabot-audit/ontology/hasReviewDisposition	hasReviewDisposition	人工审核结论	ObjectProperty	Records the explicit disposition of a human review.
+https://example.org/cabot-audit/ontology/allocationPayment	allocationPayment	分配对应付款	ObjectProperty	Identifies the payment being allocated.
+https://example.org/cabot-audit/ontology/allocationCredit	allocationCredit	分配对应贷项	ObjectProperty	Identifies the credit memo being applied.
+https://example.org/cabot-audit/ontology/allocationToInvoice	allocationToInvoice	分配目标发票	ObjectProperty	Identifies the invoice to which the amount is applied.
+https://example.org/cabot-audit/ontology/snapshotForScope	snapshotForScope	余额对应范围	ObjectProperty	Binds a balance to its account, currency and cut-off.
+https://example.org/cabot-audit/ontology/snapshotFromDataset	snapshotFromDataset	余额来源快照	ObjectProperty	Identifies the dataset from which the balance was obtained.
+https://example.org/cabot-audit/ontology/snapshotUsesObservation	snapshotUsesObservation	余额使用记录	ObjectProperty	Identifies observations supporting a balance.
+https://example.org/cabot-audit/ontology/hasPaymentStatus	hasPaymentStatus	观察付款状态	ObjectProperty	Records the normalized status asserted by a particular source.
+https://example.org/cabot-audit/ontology/supplierCode	supplierCode	供应商代码	DataProperty	Source supplier code preserved as text.
+https://example.org/cabot-audit/ontology/sourceRecordId	sourceRecordId	来源记录标识	DataProperty	Stable identifier of a row within its source snapshot.
+https://example.org/cabot-audit/ontology/rawInvoiceNumber	rawInvoiceNumber	原始发票编号	DataProperty	Invoice reference exactly as supplied, including leading zeroes.
+https://example.org/cabot-audit/ontology/normalizedInvoiceNumber	normalizedInvoiceNumber	规范发票编号	DataProperty	A normalized candidate reference whose collision policy is separately governed.
+https://example.org/cabot-audit/ontology/invoiceDate	invoiceDate	发票日期	DataProperty	The date asserted for the invoice in a source observation.
+https://example.org/cabot-audit/ontology/paymentDate	paymentDate	付款日期	DataProperty	The payment date asserted by the source.
+https://example.org/cabot-audit/ontology/cutoffTime	cutoffTime	对账截止时间	DataProperty	The instant at which a reconciliation scope is evaluated.
+https://example.org/cabot-audit/ontology/snapshotTime	snapshotTime	快照时间	DataProperty	The timestamp represented by the source snapshot.
+https://example.org/cabot-audit/ontology/currencyCode	currencyCode	币种代码	DataProperty	The explicit currency of monetary values on this record.
+https://example.org/cabot-audit/ontology/observedGrossAmount	observedGrossAmount	观察发票总额	DataProperty	The gross invoice amount asserted by one source.
+https://example.org/cabot-audit/ontology/observedPaidAmount	observedPaidAmount	观察已付金额	DataProperty	The paid amount asserted by one source for the observation.
+https://example.org/cabot-audit/ontology/observedOutstandingAmount	observedOutstandingAmount	观察未结金额	DataProperty	The outstanding balance asserted by one source under a documented policy.
+https://example.org/cabot-audit/ontology/normalizedNetPayableAmount	normalizedNetPayableAmount	规范净应付余额	DataProperty	The source balance expressed under the approved buyer-payable sign policy.
+https://example.org/cabot-audit/ontology/allocationAmount	allocationAmount	分配金额	DataProperty	The amount of a payment or credit allocated to an invoice.
+https://example.org/cabot-audit/ontology/allocationDate	allocationDate	分配日期	DataProperty	The date of a payment allocation or credit application.
+https://example.org/cabot-audit/ontology/signedVarianceAmount	signedVarianceAmount	有符号差额	DataProperty	Supplier value minus buyer value for an explicitly comparable measure.
+https://example.org/cabot-audit/ontology/absoluteVarianceAmount	absoluteVarianceAmount	绝对差额	DataProperty	The absolute magnitude of a variance, not a confirmed loss.
+https://example.org/cabot-audit/ontology/creditFaceAmount	creditFaceAmount	贷项票面额	DataProperty	Face amount of a credit memo in its explicit currency.
+https://example.org/cabot-audit/ontology/remainingCreditAmount	remainingCreditAmount	贷项剩余金额	DataProperty	Remaining credit balance asserted for this synthetic or sourced record.
+https://example.org/cabot-audit/ontology/rawPaymentStatus	rawPaymentStatus	来源付款状态	DataProperty	The original payment status before vocabulary mapping.
+https://example.org/cabot-audit/ontology/supplierComment	supplierComment	供应商备注	DataProperty	Supplier-provided text treated as data, not instructions.
+https://example.org/cabot-audit/ontology/interpretationText	interpretationText	原因建议文本	DataProperty	A proposed contextual explanation requiring evidence and review.
+https://example.org/cabot-audit/ontology/ruleId	ruleId	规则编号	DataProperty	Stable business rule identifier such as REC-07.
+https://example.org/cabot-audit/ontology/ruleVersion	ruleVersion	规则版本	DataProperty	Version of the semantic rule specification.
+https://example.org/cabot-audit/ontology/runId	runId	运行编号	DataProperty	Identifier of a reconciliation execution or synthetic demonstration.
+https://example.org/cabot-audit/ontology/codeCommit	codeCommit	代码版本	DataProperty	Source-control revision associated with a run.
+https://example.org/cabot-audit/ontology/inputHash	inputHash	输入散列	DataProperty	SHA-256 digest of an immutable input file.
+https://example.org/cabot-audit/ontology/sourceFile	sourceFile	来源文件	DataProperty	Evidence location relative to its authorized data store.
+https://example.org/cabot-audit/ontology/sourceRow	sourceRow	来源行号	DataProperty	One-based row number in the source file including its header.
+https://example.org/cabot-audit/ontology/findingFingerprint	findingFingerprint	异常稳定指纹	DataProperty	Stable identity of a finding within its governed scope and rule version.
+https://example.org/cabot-audit/ontology/modelId	modelId	模型标识	DataProperty	Identifier of the model used for an actual interpretation; absent for hand-authored fixtures.
+https://example.org/cabot-audit/ontology/promptVersion	promptVersion	提示版本	DataProperty	Version of the prompt used for an actual model-generated interpretation.
+https://example.org/cabot-audit/ontology/isSynthetic	isSynthetic	合成数据标记	DataProperty	True when an individual is a test fixture rather than business evidence.
+https://example.org/cabot-audit/ontology/isCompleteSnapshot	isCompleteSnapshot	快照完整性	DataProperty	Whether completeness for the declared scope is explicitly asserted.
+https://example.org/cabot-audit/ontology/reviewerId	reviewerId	审核者标识	DataProperty	Identifier of the accountable human reviewer.
+https://example.org/cabot-audit/ontology/reviewTime	reviewTime	审核时间	DataProperty	Timestamp of the review decision.
+https://example.org/cabot-audit/ontology/Paid	Paid	已付	Vocabulary	The Paid value in the PaymentStatus vocabulary.
+https://example.org/cabot-audit/ontology/PartiallyPaid	PartiallyPaid	部分已付	Vocabulary	The PartiallyPaid value in the PaymentStatus vocabulary.
+https://example.org/cabot-audit/ontology/OpenPayment	OpenPayment	未结	Vocabulary	The OpenPayment value in the PaymentStatus vocabulary.
+https://example.org/cabot-audit/ontology/Disputed	Disputed	争议	Vocabulary	The Disputed value in the PaymentStatus vocabulary.
+https://example.org/cabot-audit/ontology/UnknownPayment	UnknownPayment	未知付款状态	Vocabulary	The UnknownPayment value in the PaymentStatus vocabulary.
+https://example.org/cabot-audit/ontology/SupplierOnlyRecord	SupplierOnlyRecord	仅供应商侧记录	Vocabulary	The SupplierOnlyRecord value in the FindingType vocabulary.
+https://example.org/cabot-audit/ontology/CabotOnlyRecord	CabotOnlyRecord	仅企业侧记录	Vocabulary	The CabotOnlyRecord value in the FindingType vocabulary.
+https://example.org/cabot-audit/ontology/InvoiceValueDifference	InvoiceValueDifference	发票金额差异	Vocabulary	The InvoiceValueDifference value in the FindingType vocabulary.
+https://example.org/cabot-audit/ontology/PaymentStatusDifference	PaymentStatusDifference	付款状态差异	Vocabulary	The PaymentStatusDifference value in the FindingType vocabulary.
+https://example.org/cabot-audit/ontology/PaymentDifference	PaymentDifference	付款金额差异	Vocabulary	The PaymentDifference value in the FindingType vocabulary.
+https://example.org/cabot-audit/ontology/CreditOffsetDifference	CreditOffsetDifference	贷项抵扣差异	Vocabulary	The CreditOffsetDifference value in the FindingType vocabulary.
+https://example.org/cabot-audit/ontology/NetPayableDifference	NetPayableDifference	净应付差异	Vocabulary	The NetPayableDifference value in the FindingType vocabulary.
+https://example.org/cabot-audit/ontology/Pass	Pass	通过	Vocabulary	The Pass value in the CheckOutcome vocabulary.
+https://example.org/cabot-audit/ontology/Fail	Fail	不通过	Vocabulary	The Fail value in the CheckOutcome vocabulary.
+https://example.org/cabot-audit/ontology/NotEvaluable	NotEvaluable	不可评估	Vocabulary	The NotEvaluable value in the CheckOutcome vocabulary.
+https://example.org/cabot-audit/ontology/ValidationFailure	ValidationFailure	输入校验失败	Vocabulary	The ValidationFailure value in the CheckOutcome vocabulary.
+https://example.org/cabot-audit/ontology/Open	Open	待处理	Vocabulary	The Open value in the FindingStatus vocabulary.
+https://example.org/cabot-audit/ontology/UnderReview	UnderReview	审核中	Vocabulary	The UnderReview value in the FindingStatus vocabulary.
+https://example.org/cabot-audit/ontology/Closed	Closed	已关闭	Vocabulary	The Closed value in the FindingStatus vocabulary.
+https://example.org/cabot-audit/ontology/Financial	Financial	财务影响	Vocabulary	The Financial value in the IssueSeverity vocabulary.
+https://example.org/cabot-audit/ontology/Control	Control	控制影响	Vocabulary	The Control value in the IssueSeverity vocabulary.
+https://example.org/cabot-audit/ontology/Low	Low	低	Vocabulary	The Low value in the RiskLevel vocabulary.
+https://example.org/cabot-audit/ontology/Medium	Medium	中	Vocabulary	The Medium value in the RiskLevel vocabulary.
+https://example.org/cabot-audit/ontology/High	High	高	Vocabulary	The High value in the RiskLevel vocabulary.
+https://example.org/cabot-audit/ontology/TimingDifference	TimingDifference	时点差异	Vocabulary	The TimingDifference value in the CauseCategory vocabulary.
+https://example.org/cabot-audit/ontology/PaymentMisallocation	PaymentMisallocation	付款分配错位	Vocabulary	The PaymentMisallocation value in the CauseCategory vocabulary.
+https://example.org/cabot-audit/ontology/PendingCredit	PendingCredit	待抵扣	Vocabulary	The PendingCredit value in the CauseCategory vocabulary.
+https://example.org/cabot-audit/ontology/BusinessDispute	BusinessDispute	业务争议	Vocabulary	The BusinessDispute value in the CauseCategory vocabulary.
+https://example.org/cabot-audit/ontology/AdministrativeError	AdministrativeError	行政处理错误	Vocabulary	The AdministrativeError value in the CauseCategory vocabulary.
+https://example.org/cabot-audit/ontology/UnknownCause	UnknownCause	原因未定	Vocabulary	The UnknownCause value in the CauseCategory vocabulary.
+https://example.org/cabot-audit/ontology/Confirmed	Confirmed	已确认	Vocabulary	The Confirmed value in the ReviewDisposition vocabulary.
+https://example.org/cabot-audit/ontology/Rejected	Rejected	已驳回	Vocabulary	The Rejected value in the ReviewDisposition vocabulary.
+https://example.org/cabot-audit/ontology/NeedsEvidence	NeedsEvidence	待补证据	Vocabulary	The NeedsEvidence value in the ReviewDisposition vocabulary.
+https://example.org/cabot-audit/ontology/Explained	Explained	已解释	Vocabulary	The Explained value in the ReviewDisposition vocabulary.
+https://example.org/cabot-audit/ontology/Exact	Exact	精确匹配	Vocabulary	The Exact value in the MatchMethod vocabulary.
+https://example.org/cabot-audit/ontology/ApprovedNormalization	ApprovedNormalization	批准的规范化匹配	Vocabulary	The ApprovedNormalization value in the MatchMethod vocabulary.
+https://example.org/cabot-audit/ontology/HumanConfirmed	HumanConfirmed	人工确认匹配	Vocabulary	The HumanConfirmed value in the MatchMethod vocabulary.
+https://example.org/cabot-audit/ontology/Candidate	Candidate	候选匹配	Vocabulary	The Candidate value in the MatchMethod vocabulary.
+https://example.org/cabot-audit/ontology/REC-01	REC-01	供应商侧发票存在性	AuditRule	An observation is present in a supplier snapshot and unmatched in the comparable complete Cabot snapshot. Does not prove non-submission.
+https://example.org/cabot-audit/ontology/REC-02	REC-02	企业侧发票存在性	AuditRule	An observation is present in a Cabot snapshot and unmatched in the comparable complete supplier snapshot. Does not prove absence of supporting documents.
+https://example.org/cabot-audit/ontology/REC-03	REC-03	发票金额一致性	AuditRule	Comparable source invoice values differ beyond the separately approved currency and precision policy.
+https://example.org/cabot-audit/ontology/REC-04	REC-04	付款状态一致性	AuditRule	Comparable source statuses differ after an approved vocabulary mapping.
+https://example.org/cabot-audit/ontology/REC-05	REC-05	付款金额一致性	AuditRule	Comparable paid or received amounts differ under the approved payment scope and allocation policy.
+https://example.org/cabot-audit/ontology/REC-06	REC-06	贷项应用检查	AuditRule	Credit balance or application evidence indicates an unresolved credit discrepancy; missing reference alone is not proof of non-application.
+https://example.org/cabot-audit/ontology/REC-07	REC-07	净应付对账	AuditRule	Supplier and Cabot net payable balances differ for the same account, currency, cut-off and complete open-item scope. Financial policy is not fixed by this ontology.

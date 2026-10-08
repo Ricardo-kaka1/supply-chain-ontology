@@ -1,0 +1,8 @@
+side,invoice_number,amount
+supplier,INV-011,4200
+supplier,INV-017,5500
+supplier,MATCHED-BASE,12600
+cabot,INV-017,5000
+cabot,INV-014,300
+cabot,INV-029,900
+cabot,MATCHED-BASE,12600

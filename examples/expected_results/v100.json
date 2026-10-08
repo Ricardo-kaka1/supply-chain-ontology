@@ -1,0 +1,16 @@
+{
+  "synthetic": true,
+  "currency": "CNY",
+  "supplier_balance": "22300",
+  "cabot_balance": "18800",
+  "signed_variance": "3500",
+  "absolute_line_variances": "5900",
+  "bridge": [
+    "4200",
+    "500",
+    "-300",
+    "-900"
+  ],
+  "validated_recoverable_amount": null,
+  "credit_example_is_independent": true
+}

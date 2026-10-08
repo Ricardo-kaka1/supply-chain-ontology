@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "cabot-ontology"
+version = "0.1.0.dev0"
+description = "Cabot synthetic reconciliation semantic MVP"
+requires-python = ">=3.10"
+dependencies = ["oaklib==0.6.23", "semsql==0.4.0", "rdflib==7.6.0"]
+[project.scripts]
+cabot-ontology = "cabot_ontology.cli:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

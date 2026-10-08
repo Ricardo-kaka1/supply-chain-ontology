@@ -1,0 +1,17 @@
+{
+  "docker_desktop": {
+    "file_version": "4.90.0.238679",
+    "source": "https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe",
+    "sha256": "2ecc54255702ffbf2e2779cb35ebecde535a0b31e4223171be2195dc318ebd3d",
+    "authenticode_status": "Valid",
+    "signer": "Docker Inc",
+    "installed": false
+  },
+  "protege": {
+    "version": "5.6.9",
+    "source": "https://github.com/protegeproject/protege-distribution/releases/download/protege-5.6.9/Protege-5.6.9-win.zip",
+    "sha256": "656db16bbaa93ea8ac25f553e86c4ab0f2e58edd3470301d9c79452facc7a01c",
+    "portable_extracted": true,
+    "desktop_verified": false
+  }
+}

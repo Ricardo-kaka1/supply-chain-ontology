@@ -1,0 +1,9 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT ?entity WHERE {
+ VALUES ?kind {owl:Class owl:ObjectProperty owl:DatatypeProperty owl:NamedIndividual}
+ ?entity a ?kind . FILTER(isIRI(?entity))
+ FILTER(!STRSTARTS(STR(?entity),"https://example.org/cabot-audit/ontology/") &&
+        !STRSTARTS(STR(?entity),"http://www.w3.org/") &&
+        !STRSTARTS(STR(?entity),"http://purl.obolibrary.org/") &&
+        !STRSTARTS(STR(?entity),"http://purl.org/"))
+}

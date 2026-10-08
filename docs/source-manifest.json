@@ -1,0 +1,25 @@
+{
+  "sources": [
+    {
+      "name": "Cabot.md",
+      "sha256": "e5a4aa83dbc131a1cd2fefc9ccbb8956d6f6f3527e4c291ae7969ab5fe54acec",
+      "bytes": 7754
+    },
+    {
+      "name": "code.py",
+      "sha256": "f51d240c96aff7551fd881c772378f9e46218a2ce6f256a94078ee95e5439763",
+      "bytes": 5881
+    },
+    {
+      "name": "GEP_Payment Audit Proposal(Simplified Deterministic Approach)_Cabot_20260609.docx",
+      "sha256": "4a597dd1499ded0827281fd8810986925ee5e10d45f471652728a0324cc69b15",
+      "bytes": 65961
+    },
+    {
+      "name": "PROJECT_CONTEXT.md",
+      "sha256": "be91a6936ac9b1005eb0314476ba7f697b26b9cf085a41bda9c2743f13be4c41",
+      "bytes": 40957
+    }
+  ],
+  "policy": "Proposal Scope 2 defines requested scope; Cabot.md records discussion; code.py is a prototype, not approval evidence."
+}

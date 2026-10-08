@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "mappings": [
+    {
+      "source": "Supplier Code",
+      "term": "https://example.org/cabot-audit/ontology/supplierCode"
+    },
+    {
+      "source": "Invoice Gross Amount",
+      "term": "https://example.org/cabot-audit/ontology/observedGrossAmount"
+    },
+    {
+      "source": "Invoice Status",
+      "term": "https://example.org/cabot-audit/ontology/hasPaymentStatus"
+    }
+  ]
+}

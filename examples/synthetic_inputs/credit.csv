@@ -1,0 +1,2 @@
+credit_id,face_amount,allocated_amount,remaining_amount,currency,synthetic
+CM-TEST,600,200,400,CNY,true

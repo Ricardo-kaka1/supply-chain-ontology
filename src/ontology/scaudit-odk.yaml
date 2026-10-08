@@ -1,0 +1,34 @@
+id: scaudit
+title: Cabot Supplier Reconciliation Ontology
+description: Development ontology for Cabot Scope 2 supplier statement reconciliation
+repo: supply-chain-ontology
+github_org: local-development
+git_main_branch: main
+uribase: https://example.org/cabot-audit/ontology
+uribase_suffix: scaudit
+namespaces:
+  - https://example.org/cabot-audit/ontology/
+edit_format: owl
+reasoner: hermit
+allow_equivalents: asserted-only
+release_artefacts: [base, full]
+primary_release: full
+export_formats: [owl, db]
+use_context: true
+use_edit_file_imports: true
+manage_import_declarations: false
+public_release: none
+ci: []
+workflows: []
+documentation: null
+robot_java_args: -Xmx2G
+robot_report:
+  custom_profile: true
+  custom_sparql_checks: [required-metadata, internal-namespace]
+  custom_sparql_exports: []
+  ensure_owl2dl_profile: true
+  fail_on: ERROR
+  report_on: [edit]
+  sparql_test_on: [edit]
+  use_base_iris: true
+  use_labels: true

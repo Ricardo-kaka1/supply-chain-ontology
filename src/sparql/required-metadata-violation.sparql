@@ -1,0 +1,13 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX IAO: <http://purl.obolibrary.org/obo/IAO_>
+SELECT DISTINCT ?entity WHERE {
+  VALUES ?kind {owl:Class owl:ObjectProperty owl:DatatypeProperty owl:NamedIndividual}
+  ?entity a ?kind . FILTER(isIRI(?entity))
+  FILTER(STRSTARTS(STR(?entity),"https://example.org/cabot-audit/ontology/"))
+  FILTER (
+    NOT EXISTS {?entity IAO:0000115 ?d . FILTER(STRLEN(STR(?d)) > 0)} ||
+    NOT EXISTS {?entity rdfs:label ?en . FILTER(LANG(?en)="en")} ||
+    NOT EXISTS {?entity rdfs:label ?zh . FILTER(LANG(?zh)="zh")}
+  )
+}

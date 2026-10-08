@@ -1,0 +1,553 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="urn:example:cabot-audit:demo.owl#"
+     xml:base="urn:example:cabot-audit:demo.owl"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:sca="https://example.org/cabot-audit/ontology/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="urn:example:cabot-audit:demo.owl">
+        <owl:imports rdf:resource="https://example.org/cabot-audit/ontology/scaudit.owl"/>
+        <owl:versionInfo>0.1.0-dev</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- urn:example:cabot-audit:Account_V100 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Account_V100">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/SupplierAccount"/>
+        <sca:accountBuyer rdf:resource="urn:example:cabot-audit:Cabot_Test_Entity"/>
+        <sca:accountSupplier rdf:resource="urn:example:cabot-audit:Supplier_V100"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:CabotSnapshot_V100 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:CabotSnapshot_V100">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/BalanceSnapshot"/>
+        <sca:snapshotForScope rdf:resource="urn:example:cabot-audit:Scope_V100"/>
+        <sca:snapshotFromDataset rdf:resource="urn:example:cabot-audit:Cabot_Dataset"/>
+        <sca:snapshotUsesObservation rdf:resource="urn:example:cabot-audit:cabot_INV_014"/>
+        <sca:snapshotUsesObservation rdf:resource="urn:example:cabot-audit:cabot_INV_017"/>
+        <sca:snapshotUsesObservation rdf:resource="urn:example:cabot-audit:cabot_INV_029"/>
+        <sca:snapshotUsesObservation rdf:resource="urn:example:cabot-audit:cabot_MATCHED_BASE"/>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:normalizedNetPayableAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">18800</sca:normalizedNetPayableAmount>
+        <sca:snapshotTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-31T23:59:59+08:00</sca:snapshotTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Cabot_Dataset -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Cabot_Dataset">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/SourceDataset"/>
+        <sca:datasetFromSystem rdf:resource="urn:example:cabot-audit:Cabot_Test_ERP"/>
+        <sca:inputHash>8481677c4b08aca0953ea94288d7b974c6e7c6b91745aeaef6ccee9c58a44e4b</sca:inputHash>
+        <sca:isCompleteSnapshot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isCompleteSnapshot>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:snapshotTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-31T23:59:59+08:00</sca:snapshotTime>
+        <sca:sourceFile>examples/synthetic_inputs/v100.csv</sca:sourceFile>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Cabot_Test_ERP -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Cabot_Test_ERP">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/SourceSystem"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Cabot_Test_Entity -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Cabot_Test_Entity">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/BuyerLegalEntity"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:CreditAllocation_Test -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:CreditAllocation_Test">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/CreditAllocation"/>
+        <prov:wasDerivedFrom rdf:resource="urn:example:cabot-audit:Credit_Observation"/>
+        <sca:allocationCredit rdf:resource="urn:example:cabot-audit:Credit_Test"/>
+        <sca:allocationToInvoice rdf:resource="urn:example:cabot-audit:INV_017"/>
+        <sca:allocationAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</sca:allocationAmount>
+        <sca:allocationDate>2025-12-30</sca:allocationDate>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Credit_Dataset -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Credit_Dataset">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/SourceDataset"/>
+        <sca:datasetFromSystem rdf:resource="urn:example:cabot-audit:Cabot_Test_ERP"/>
+        <sca:inputHash>61ee853ab60ba661745fd0a1a98efc5e5d9efd6d4abd0562f78fc453180d33f0</sca:inputHash>
+        <sca:isCompleteSnapshot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isCompleteSnapshot>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:snapshotTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-31T23:59:59+08:00</sca:snapshotTime>
+        <sca:sourceFile>examples/synthetic_inputs/credit.csv</sca:sourceFile>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Credit_Observation -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Credit_Observation">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/RecordObservation"/>
+        <sca:observationAboutDocument rdf:resource="urn:example:cabot-audit:Credit_Test"/>
+        <sca:observationForAccount rdf:resource="urn:example:cabot-audit:Account_V100"/>
+        <sca:recordInDataset rdf:resource="urn:example:cabot-audit:Credit_Dataset"/>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:observedGrossAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">600</sca:observedGrossAmount>
+        <sca:observedOutstandingAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400</sca:observedOutstandingAmount>
+        <sca:observedPaidAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</sca:observedPaidAmount>
+        <sca:sourceRecordId>credit:2</sca:sourceRecordId>
+        <sca:sourceRow rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</sca:sourceRow>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Credit_Test -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Credit_Test">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/CreditMemo"/>
+        <prov:wasDerivedFrom rdf:resource="urn:example:cabot-audit:Credit_Observation"/>
+        <sca:issuedBy rdf:resource="urn:example:cabot-audit:Supplier_V100"/>
+        <sca:creditFaceAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">600</sca:creditFaceAmount>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:remainingCreditAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400</sca:remainingCreditAmount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Evaluation_INV017 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Evaluation_INV017">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/RuleEvaluation"/>
+        <sca:evaluationInRun rdf:resource="urn:example:cabot-audit:Run_V100"/>
+        <sca:evaluationUsesObservation rdf:resource="urn:example:cabot-audit:cabot_INV_017"/>
+        <sca:evaluationUsesObservation rdf:resource="urn:example:cabot-audit:supplier_INV_017"/>
+        <sca:evaluationUsesRule rdf:resource="https://example.org/cabot-audit/ontology/REC-03"/>
+        <sca:hasCheckOutcome rdf:resource="https://example.org/cabot-audit/ontology/Fail"/>
+        <sca:absoluteVarianceAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">500</sca:absoluteVarianceAmount>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:signedVarianceAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">500</sca:signedVarianceAmount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Finding_INV017 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Finding_INV017">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/AuditFinding"/>
+        <prov:wasDerivedFrom rdf:resource="urn:example:cabot-audit:cabot_INV_017"/>
+        <prov:wasDerivedFrom rdf:resource="urn:example:cabot-audit:supplier_INV_017"/>
+        <prov:wasGeneratedBy rdf:resource="urn:example:cabot-audit:Run_V100"/>
+        <sca:findingAboutDocument rdf:resource="urn:example:cabot-audit:INV_017"/>
+        <sca:findingFromEvaluation rdf:resource="urn:example:cabot-audit:Evaluation_INV017"/>
+        <sca:hasFindingStatus rdf:resource="https://example.org/cabot-audit/ontology/UnderReview"/>
+        <sca:hasFindingType rdf:resource="https://example.org/cabot-audit/ontology/InvoiceValueDifference"/>
+        <sca:hasIssueSeverity rdf:resource="https://example.org/cabot-audit/ontology/Financial"/>
+        <sca:findingFingerprint>synthetic:V100:INV017:REC03</sca:findingFingerprint>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:INV_011 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:INV_011">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/Invoice"/>
+        <sca:billedTo rdf:resource="urn:example:cabot-audit:Cabot_Test_Entity"/>
+        <sca:issuedBy rdf:resource="urn:example:cabot-audit:Supplier_V100"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:INV_014 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:INV_014">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/Invoice"/>
+        <sca:billedTo rdf:resource="urn:example:cabot-audit:Cabot_Test_Entity"/>
+        <sca:issuedBy rdf:resource="urn:example:cabot-audit:Supplier_V100"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:INV_017 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:INV_017">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/Invoice"/>
+        <sca:billedTo rdf:resource="urn:example:cabot-audit:Cabot_Test_Entity"/>
+        <sca:issuedBy rdf:resource="urn:example:cabot-audit:Supplier_V100"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:INV_029 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:INV_029">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/Invoice"/>
+        <sca:billedTo rdf:resource="urn:example:cabot-audit:Cabot_Test_Entity"/>
+        <sca:issuedBy rdf:resource="urn:example:cabot-audit:Supplier_V100"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Interpretation_INV017 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Interpretation_INV017">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/FindingInterpretation"/>
+        <sca:hasCauseCategory rdf:resource="https://example.org/cabot-audit/ontology/UnknownCause"/>
+        <sca:interpretationEvidence rdf:resource="urn:example:cabot-audit:cabot_INV_017"/>
+        <sca:interpretationEvidence rdf:resource="urn:example:cabot-audit:supplier_INV_017"/>
+        <sca:interpretationOf rdf:resource="urn:example:cabot-audit:Finding_INV017"/>
+        <sca:interpretationText>合成建议：金额差异已观察到，原因尚未确定。此文本由测试作者编写，未调用模型。</sca:interpretationText>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:MATCHED_BASE -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:MATCHED_BASE">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/Invoice"/>
+        <sca:billedTo rdf:resource="urn:example:cabot-audit:Cabot_Test_Entity"/>
+        <sca:issuedBy rdf:resource="urn:example:cabot-audit:Supplier_V100"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Match_INV017 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Match_INV017">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/MatchDecision"/>
+        <sca:hasMatchMethod rdf:resource="https://example.org/cabot-audit/ontology/Exact"/>
+        <sca:matchCabotRecord rdf:resource="urn:example:cabot-audit:cabot_INV_017"/>
+        <sca:matchSupplierRecord rdf:resource="urn:example:cabot-audit:supplier_INV_017"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:NetEvaluation_V100 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:NetEvaluation_V100">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/RuleEvaluation"/>
+        <sca:evaluationInRun rdf:resource="urn:example:cabot-audit:Run_V100"/>
+        <sca:evaluationUsesObservation rdf:resource="urn:example:cabot-audit:cabot_INV_014"/>
+        <sca:evaluationUsesObservation rdf:resource="urn:example:cabot-audit:cabot_INV_017"/>
+        <sca:evaluationUsesObservation rdf:resource="urn:example:cabot-audit:cabot_INV_029"/>
+        <sca:evaluationUsesObservation rdf:resource="urn:example:cabot-audit:cabot_MATCHED_BASE"/>
+        <sca:evaluationUsesObservation rdf:resource="urn:example:cabot-audit:supplier_INV_011"/>
+        <sca:evaluationUsesObservation rdf:resource="urn:example:cabot-audit:supplier_INV_017"/>
+        <sca:evaluationUsesObservation rdf:resource="urn:example:cabot-audit:supplier_MATCHED_BASE"/>
+        <sca:evaluationUsesRule rdf:resource="https://example.org/cabot-audit/ontology/REC-07"/>
+        <sca:evaluationUsesSnapshot rdf:resource="urn:example:cabot-audit:CabotSnapshot_V100"/>
+        <sca:evaluationUsesSnapshot rdf:resource="urn:example:cabot-audit:SupplierSnapshot_V100"/>
+        <sca:hasCheckOutcome rdf:resource="https://example.org/cabot-audit/ontology/Fail"/>
+        <sca:absoluteVarianceAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3500</sca:absoluteVarianceAmount>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:signedVarianceAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3500</sca:signedVarianceAmount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:NetFinding_V100 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:NetFinding_V100">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/AuditFinding"/>
+        <sca:findingFromEvaluation rdf:resource="urn:example:cabot-audit:NetEvaluation_V100"/>
+        <sca:hasFindingStatus rdf:resource="https://example.org/cabot-audit/ontology/Open"/>
+        <sca:hasFindingType rdf:resource="https://example.org/cabot-audit/ontology/NetPayableDifference"/>
+        <sca:hasIssueSeverity rdf:resource="https://example.org/cabot-audit/ontology/Financial"/>
+        <sca:findingFingerprint>synthetic:V100:NET:REC07</sca:findingFingerprint>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Review_INV017 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Review_INV017">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/ReviewDecision"/>
+        <sca:hasReviewDisposition rdf:resource="https://example.org/cabot-audit/ontology/NeedsEvidence"/>
+        <sca:reviewedFinding rdf:resource="urn:example:cabot-audit:Finding_INV017"/>
+        <sca:reviewedInterpretation rdf:resource="urn:example:cabot-audit:Interpretation_INV017"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:reviewTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2026-01-02T10:00:00+08:00</sca:reviewTime>
+        <sca:reviewerId>SYNTHETIC-REVIEWER</sca:reviewerId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Run_V100 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Run_V100">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/ReconciliationRun"/>
+        <sca:runHasScope rdf:resource="urn:example:cabot-audit:Scope_V100"/>
+        <sca:runUsesDataset rdf:resource="urn:example:cabot-audit:Cabot_Dataset"/>
+        <sca:runUsesDataset rdf:resource="urn:example:cabot-audit:Supplier_Dataset"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:runId>SYNTHETIC-V100</sca:runId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Scope_V100 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Scope_V100">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/ReconciliationScope"/>
+        <sca:scopeForAccount rdf:resource="urn:example:cabot-audit:Account_V100"/>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:cutoffTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-31T23:59:59+08:00</sca:cutoffTime>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Statement_V100 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Statement_V100">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/SupplierStatement"/>
+        <sca:issuedBy rdf:resource="urn:example:cabot-audit:Supplier_V100"/>
+        <sca:statementForAccount rdf:resource="urn:example:cabot-audit:Account_V100"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:SupplierSnapshot_V100 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:SupplierSnapshot_V100">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/BalanceSnapshot"/>
+        <sca:snapshotForScope rdf:resource="urn:example:cabot-audit:Scope_V100"/>
+        <sca:snapshotFromDataset rdf:resource="urn:example:cabot-audit:Supplier_Dataset"/>
+        <sca:snapshotUsesObservation rdf:resource="urn:example:cabot-audit:supplier_INV_011"/>
+        <sca:snapshotUsesObservation rdf:resource="urn:example:cabot-audit:supplier_INV_017"/>
+        <sca:snapshotUsesObservation rdf:resource="urn:example:cabot-audit:supplier_MATCHED_BASE"/>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:normalizedNetPayableAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">22300</sca:normalizedNetPayableAmount>
+        <sca:snapshotTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-31T23:59:59+08:00</sca:snapshotTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Supplier_Channel -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Supplier_Channel">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/SourceSystem"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Supplier_Dataset -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Supplier_Dataset">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/SourceDataset"/>
+        <sca:datasetFromSystem rdf:resource="urn:example:cabot-audit:Supplier_Channel"/>
+        <sca:inputHash>8481677c4b08aca0953ea94288d7b974c6e7c6b91745aeaef6ccee9c58a44e4b</sca:inputHash>
+        <sca:isCompleteSnapshot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isCompleteSnapshot>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:snapshotTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-31T23:59:59+08:00</sca:snapshotTime>
+        <sca:sourceFile>examples/synthetic_inputs/v100.csv</sca:sourceFile>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:Supplier_V100 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:Supplier_V100">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/Supplier"/>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:supplierCode>V100</sca:supplierCode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:cabot_INV_014 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:cabot_INV_014">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/InternalAPRecord"/>
+        <sca:hasPaymentStatus rdf:resource="https://example.org/cabot-audit/ontology/OpenPayment"/>
+        <sca:observationAboutDocument rdf:resource="urn:example:cabot-audit:INV_014"/>
+        <sca:observationForAccount rdf:resource="urn:example:cabot-audit:Account_V100"/>
+        <sca:recordInDataset rdf:resource="urn:example:cabot-audit:Cabot_Dataset"/>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:observedGrossAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">300</sca:observedGrossAmount>
+        <sca:observedOutstandingAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">300</sca:observedOutstandingAmount>
+        <sca:observedPaidAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</sca:observedPaidAmount>
+        <sca:rawInvoiceNumber>INV-014</sca:rawInvoiceNumber>
+        <sca:sourceRecordId>v100:6</sca:sourceRecordId>
+        <sca:sourceRow rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</sca:sourceRow>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:cabot_INV_017 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:cabot_INV_017">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/InternalAPRecord"/>
+        <sca:hasPaymentStatus rdf:resource="https://example.org/cabot-audit/ontology/OpenPayment"/>
+        <sca:observationAboutDocument rdf:resource="urn:example:cabot-audit:INV_017"/>
+        <sca:observationForAccount rdf:resource="urn:example:cabot-audit:Account_V100"/>
+        <sca:recordInDataset rdf:resource="urn:example:cabot-audit:Cabot_Dataset"/>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:observedGrossAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5000</sca:observedGrossAmount>
+        <sca:observedOutstandingAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5000</sca:observedOutstandingAmount>
+        <sca:observedPaidAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</sca:observedPaidAmount>
+        <sca:rawInvoiceNumber>INV-017</sca:rawInvoiceNumber>
+        <sca:sourceRecordId>v100:5</sca:sourceRecordId>
+        <sca:sourceRow rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</sca:sourceRow>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:cabot_INV_029 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:cabot_INV_029">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/InternalAPRecord"/>
+        <sca:hasPaymentStatus rdf:resource="https://example.org/cabot-audit/ontology/OpenPayment"/>
+        <sca:observationAboutDocument rdf:resource="urn:example:cabot-audit:INV_029"/>
+        <sca:observationForAccount rdf:resource="urn:example:cabot-audit:Account_V100"/>
+        <sca:recordInDataset rdf:resource="urn:example:cabot-audit:Cabot_Dataset"/>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:observedGrossAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">900</sca:observedGrossAmount>
+        <sca:observedOutstandingAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">900</sca:observedOutstandingAmount>
+        <sca:observedPaidAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</sca:observedPaidAmount>
+        <sca:rawInvoiceNumber>INV-029</sca:rawInvoiceNumber>
+        <sca:sourceRecordId>v100:7</sca:sourceRecordId>
+        <sca:sourceRow rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</sca:sourceRow>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:cabot_MATCHED_BASE -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:cabot_MATCHED_BASE">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/InternalAPRecord"/>
+        <sca:hasPaymentStatus rdf:resource="https://example.org/cabot-audit/ontology/OpenPayment"/>
+        <sca:observationAboutDocument rdf:resource="urn:example:cabot-audit:MATCHED_BASE"/>
+        <sca:observationForAccount rdf:resource="urn:example:cabot-audit:Account_V100"/>
+        <sca:recordInDataset rdf:resource="urn:example:cabot-audit:Cabot_Dataset"/>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:observedGrossAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12600</sca:observedGrossAmount>
+        <sca:observedOutstandingAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12600</sca:observedOutstandingAmount>
+        <sca:observedPaidAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</sca:observedPaidAmount>
+        <sca:rawInvoiceNumber>MATCHED-BASE</sca:rawInvoiceNumber>
+        <sca:sourceRecordId>v100:8</sca:sourceRecordId>
+        <sca:sourceRow rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</sca:sourceRow>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:supplier_INV_011 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:supplier_INV_011">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/SupplierStatementLine"/>
+        <sca:hasPaymentStatus rdf:resource="https://example.org/cabot-audit/ontology/OpenPayment"/>
+        <sca:lineOfStatement rdf:resource="urn:example:cabot-audit:Statement_V100"/>
+        <sca:observationAboutDocument rdf:resource="urn:example:cabot-audit:INV_011"/>
+        <sca:observationForAccount rdf:resource="urn:example:cabot-audit:Account_V100"/>
+        <sca:recordInDataset rdf:resource="urn:example:cabot-audit:Supplier_Dataset"/>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:observedGrossAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4200</sca:observedGrossAmount>
+        <sca:observedOutstandingAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4200</sca:observedOutstandingAmount>
+        <sca:observedPaidAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</sca:observedPaidAmount>
+        <sca:rawInvoiceNumber>INV-011</sca:rawInvoiceNumber>
+        <sca:sourceRecordId>v100:2</sca:sourceRecordId>
+        <sca:sourceRow rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</sca:sourceRow>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:supplier_INV_017 -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:supplier_INV_017">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/SupplierStatementLine"/>
+        <sca:hasPaymentStatus rdf:resource="https://example.org/cabot-audit/ontology/OpenPayment"/>
+        <sca:lineOfStatement rdf:resource="urn:example:cabot-audit:Statement_V100"/>
+        <sca:observationAboutDocument rdf:resource="urn:example:cabot-audit:INV_017"/>
+        <sca:observationForAccount rdf:resource="urn:example:cabot-audit:Account_V100"/>
+        <sca:recordInDataset rdf:resource="urn:example:cabot-audit:Supplier_Dataset"/>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:observedGrossAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5500</sca:observedGrossAmount>
+        <sca:observedOutstandingAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5500</sca:observedOutstandingAmount>
+        <sca:observedPaidAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</sca:observedPaidAmount>
+        <sca:rawInvoiceNumber>INV-017</sca:rawInvoiceNumber>
+        <sca:sourceRecordId>v100:3</sca:sourceRecordId>
+        <sca:sourceRow rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</sca:sourceRow>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- urn:example:cabot-audit:supplier_MATCHED_BASE -->
+
+    <owl:NamedIndividual rdf:about="urn:example:cabot-audit:supplier_MATCHED_BASE">
+        <rdf:type rdf:resource="https://example.org/cabot-audit/ontology/SupplierStatementLine"/>
+        <sca:hasPaymentStatus rdf:resource="https://example.org/cabot-audit/ontology/OpenPayment"/>
+        <sca:lineOfStatement rdf:resource="urn:example:cabot-audit:Statement_V100"/>
+        <sca:observationAboutDocument rdf:resource="urn:example:cabot-audit:MATCHED_BASE"/>
+        <sca:observationForAccount rdf:resource="urn:example:cabot-audit:Account_V100"/>
+        <sca:recordInDataset rdf:resource="urn:example:cabot-audit:Supplier_Dataset"/>
+        <sca:currencyCode>CNY</sca:currencyCode>
+        <sca:isSynthetic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</sca:isSynthetic>
+        <sca:observedGrossAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12600</sca:observedGrossAmount>
+        <sca:observedOutstandingAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12600</sca:observedOutstandingAmount>
+        <sca:observedPaidAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</sca:observedPaidAmount>
+        <sca:rawInvoiceNumber>MATCHED-BASE</sca:rawInvoiceNumber>
+        <sca:sourceRecordId>v100:4</sca:sourceRecordId>
+        <sca:sourceRow rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</sca:sourceRow>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

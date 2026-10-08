@@ -1,0 +1,2 @@
+ERROR	missing_label
+WARN	duplicate_label

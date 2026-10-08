@@ -1,0 +1,8 @@
+{
+  "generator": "Official ODK odk.py seed --skipgit",
+  "tag": "v1.6.1",
+  "source_directory": "INCATools-ontology-development-kit-cba5671",
+  "generator_sha256": "34925e44e57825cb27ce2c4acd3a5f7d7cbed91511b3503179102f8ed8b43200",
+  "generated_makefile_sha256": "c089891452e870b0c26dbeb037015f4c8d302fb4ae5e40fe2aea0c458c3209b8",
+  "execution": "Native Python, actual unmodified official generator; Docker execution not performed during seeding."
+}
